@@ -92,7 +92,7 @@ jobs:
           GAME: ${{ inputs.game }}
         run: |
           set -euo pipefail
-          go run github.com/aviorstudio/termcade@v0.0.3 dev build "$GAME"
+          go run github.com/aviorstudio/termcade@v0.0.4 dev build "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
       - name: Tag and release
