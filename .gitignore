@@ -1,0 +1,5 @@
+.DS_Store
+
+# termcade dev build writes into <game>/build/.
+*/build/
+*.tcade
