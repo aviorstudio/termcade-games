@@ -1,7 +1,7 @@
 [game]
 id          = "aviorstudio/asteroid"
 name        = "Asteroid"
-version     = "1.0.0"
+version     = "0.0.1"
 description = "Wrap-around space rock shooter"
 
 [requirements]

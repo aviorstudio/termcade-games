@@ -69,14 +69,14 @@ that version is already tagged, and creates `<game>-v<version>` with the
 reads the same field out of the package it fetches, so a tag derived from
 anywhere else could disagree with what the marketplace records.
 
-Tags are `asteroid-v1.0.0`, not `asteroid/v1.0.0`: a slash would make Go read
+Tags are `asteroid-v0.0.1`, not `asteroid/v0.0.1`: a slash would make Go read
 the tag as a module in a subdirectory and invent a version of a package nobody
 imports.
 
 Then point the marketplace at the release:
 
 ```sh
-termcade publish https://github.com/aviorstudio/termcade-games asteroid-v1.0.0 asteroid.tcade
+termcade publish https://github.com/aviorstudio/termcade-games asteroid-v0.0.1 asteroid.tcade
 ```
 
 The registry fetches that asset once, validates it against the same manifest
