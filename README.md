@@ -10,7 +10,7 @@ everything here is installed the same way a stranger's game is:
 ```sh
 termcade add aviorstudio/asteroid
 termcade add aviorstudio/tetris
-termcade add aviorstudio/brickough@1.0.0    # or pin a version
+termcade add aviorstudio/brickough@0.0.1    # or pin a version
 ```
 
 That is the point of this repository existing separately. There is no
