@@ -1,0 +1,127 @@
+name: Release a game
+
+# Cut one game's release: build its .tcade, tag it, and publish a GitHub
+# release with the package attached.
+#
+# One game at a time, deliberately. This is a monorepo of independent games —
+# fixing Tetris is no reason to re-release Asteroid, and a shared version
+# number across unrelated games would be meaningless to the marketplace.
+#
+# Tags are `<game>-v1.2.3`, NOT `<game>/v1.2.3`. A slash would make Go read the
+# tag as a module in a subdirectory and mint a phantom
+# `github.com/aviorstudio/termcade-games/<game>@v1.2.3`; the hyphen is
+# invisible to it. Nothing here is a Go dependency of anything, and it should
+# stay that way.
+#
+# THE MANIFEST DECIDES THE VERSION. There is no bump input: the workflow reads
+# `version` out of <game>/termcade.toml and refuses to run if that version is
+# already tagged. The registry reads the same field out of the package it
+# fetches, so a tag derived from anything else could disagree with what the
+# marketplace ends up recording. Bump the manifest, merge, release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      game:
+        description: Which game to release
+        required: true
+        type: choice
+        options:
+          - asteroid
+          - brickough
+          - tetris
+
+permissions: {}
+
+concurrency: release-${{ inputs.game }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the tag and the release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+
+      - name: Read the version out of the manifest
+        id: version
+        env:
+          GAME: ${{ inputs.game }}
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo 'Run releases from the main branch.' >&2
+            exit 1
+          fi
+
+          manifest="$GAME/termcade.toml"
+          [ -f "$manifest" ] || { echo "no $manifest" >&2; exit 1; }
+
+          # The one line that matters. Tolerates the spacing the manifests use.
+          version="$(sed -n 's/^[[:space:]]*version[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$manifest" | head -n 1)"
+          case "$version" in
+            [0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "version in $manifest is '$version'; the registry needs plain semver like 1.2.3" >&2; exit 1 ;;
+          esac
+
+          tag="$GAME-v$version"
+          git fetch --tags --force
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "$tag already exists — bump version in $manifest first." >&2
+            exit 1
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Test
+        run: go test ./...
+
+      # The arcade is the build tool. Pinning it to a released version means a
+      # package is built by a termcade a player could also be running, rather
+      # than by whatever main happened to be that morning.
+      - name: Build the package
+        env:
+          GAME: ${{ inputs.game }}
+        run: |
+          set -euo pipefail
+          go run github.com/aviorstudio/termcade@v0.0.3 dev build "$GAME"
+          sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
+
+      - name: Tag and release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GAME: ${{ inputs.game }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          sha="$(cut -d' ' -f1 < "$GAME/build/$GAME.tcade.sha256")"
+          cat > notes.md <<NOTES
+          $GAME $VERSION
+
+          Install it from the marketplace:
+
+          \`\`\`sh
+          termcade add aviorstudio/$GAME@$VERSION
+          \`\`\`
+
+          \`\`\`
+          sha256  $sha
+          \`\`\`
+
+          The registry records that digest when it fetches this package, and
+          the arcade refuses to install anything that does not match it.
+          NOTES
+
+          gh release create "$TAG" \
+            "$GAME/build/$GAME.tcade" \
+            "$GAME/build/$GAME.tcade.sha256" \
+            --target "$GITHUB_SHA" --title "$GAME $VERSION" --notes-file notes.md

@@ -1,0 +1,48 @@
+name: CI
+
+# Every push and pull request: test every game, then prove every one of them
+# still packages.
+#
+# Building the .tcade is the part worth having. `go test` compiles for the host;
+# a game only reaches a player as a wasip1 reactor module with the termcade ABI
+# exported, and `dev build` is what checks that — it compiles for wasm and
+# validates the module before zipping it. A game that tests green and cannot be
+# packaged is broken in the only way that matters.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+
+      - run: go vet ./...
+      - run: go test ./...
+
+      # Same pinned arcade the release workflow builds with, for the same
+      # reason: what CI proves buildable is what a release will produce.
+      - name: Package every game
+        run: |
+          set -euo pipefail
+          for dir in */termcade.toml; do
+            game="$(dirname "$dir")"
+            go run github.com/aviorstudio/termcade@v0.0.3 dev build "$game"
+          done
+          sha256sum */build/*.tcade
