@@ -113,7 +113,7 @@ jobs:
           Install it from the marketplace:
 
           \`\`\`sh
-          termcade add aviorstudio/$GAME@$VERSION
+          termcade add aviorstudio/$GAME
           \`\`\`
 
           \`\`\`
@@ -128,3 +128,38 @@ jobs:
             "$GAME/build/$GAME.tcade" \
             "$GAME/build/$GAME.tcade.sha256" \
             --target "$GITHUB_SHA" --title "$GAME $VERSION" --notes-file notes.md
+
+      # Tell the marketplace the release exists.
+      #
+      # After the GitHub release, not before: publishing is a claim that a
+      # package is at these coordinates, and the registry verifies it by
+      # fetching. Claiming first would have it fetch something that is not
+      # there yet.
+      #
+      # A scoped publish key rather than a password. It publishes as
+      # aviorstudio and can do nothing else — not read a library, not mint
+      # another key, not touch an account — so what a leak costs is bounded by
+      # this one handle.
+      #
+      # Skipped when the secret is absent, so a release still cuts on a fork or
+      # before the key exists. The registry can always be told later; a release
+      # that failed after tagging is much harder to unpick.
+      #
+      # The secret is read into the environment and the step decides from
+      # there, rather than through a step-level `if` on the secrets context —
+      # that is the kind of expression that evaluates to something unhelpful
+      # instead of failing loudly, and a publish step which silently never ran
+      # would leave the marketplace quietly out of date.
+      - name: Publish to the marketplace
+        env:
+          TERMCADE_TOKEN: ${{ secrets.TERMCADE_TOKEN }}
+          GAME: ${{ inputs.game }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          if [ -z "${TERMCADE_TOKEN:-}" ]; then
+            echo "::warning::TERMCADE_TOKEN is not set — the release exists on GitHub, but the marketplace has not been told about it. Publish it by hand with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade"
+            exit 0
+          fi
+          go run github.com/aviorstudio/termcade@v0.0.4 publish \
+            "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
