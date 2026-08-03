@@ -3,9 +3,10 @@
 Every game aviorstudio publishes to the
 [termcade](https://github.com/aviorstudio/termcade) marketplace.
 
-The arcade ships with none of them. It compiles no games in and bundles no
-starter pack — a fresh termcade is an empty cabinet and a marketplace, and
-everything here is installed the same way a stranger's game is:
+The arcade compiles no games in: these are `.tcade` packages in the wasm
+sandbox, same as anybody's. All three are also vendored into the arcade as a
+starter pack and unpacked on first run, so a fresh termcade is playable
+before it has an account or a network. They install the ordinary way too:
 
 ```sh
 termcade add aviorstudio/asteroid
@@ -13,10 +14,17 @@ termcade add aviorstudio/tetris
 termcade add aviorstudio/brickough@0.0.1    # or pin a version
 ```
 
-That is the point of this repository existing separately. There is no
-privileged path for first-party games: these go through the registry, on the
-same terms, using the same commands, and if that path is broken they are as
-broken as anybody else's.
+The source stays here rather than in the arcade so the two move separately —
+a game changes without a release of termcade, and the SDK contract is the
+only thing between them.
+
+The bundling is a real cost, worth naming: a game that arrives prebundled
+does not exercise resolve/fetch/verify, so the registry path can rot without
+a first-party game noticing. It has to be covered on its own rather than by
+these three happening to use it.
+
+To refresh the vendored packs after changing a game, from a termcade checkout
+beside this one: `go generate ./internal/starter`.
 
 ## The games
 
