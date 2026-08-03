@@ -11,7 +11,7 @@ before it has an account or a network. They install the ordinary way too:
 ```sh
 termcade add aviorstudio/asteroid
 termcade add aviorstudio/tetris
-termcade add aviorstudio/brickough@0.0.1    # or pin a version
+termcade add aviorstudio/brickough
 ```
 
 The source stays here rather than in the arcade so the two move separately —
@@ -25,6 +25,21 @@ these three happening to use it.
 
 To refresh the vendored packs after changing a game, from a termcade checkout
 beside this one: `go generate ./internal/starter`.
+
+## Releasing
+
+`release.yml` builds a game, tags it, cuts a GitHub release, and tells the
+marketplace about it — in that order, because publishing is a claim the
+registry verifies by fetching, so the asset has to exist first.
+
+That last step needs a `TERMCADE_TOKEN` secret: a publish key scoped to the
+`aviorstudio` handle, made with `termcade keys new`. It publishes and nothing
+else — it cannot read a library, mint another key, or touch an account — so a
+leak is bounded by this one handle.
+
+Without the secret the release still cuts and the workflow warns, with the
+command to publish by hand. A release that failed after tagging is much harder
+to unpick than one the registry has not heard about yet.
 
 ## The games
 
