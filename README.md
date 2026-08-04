@@ -73,7 +73,7 @@ Requires [mise](https://mise.jdx.dev) for the pinned Go (`mise install`).
 ```sh
 go test ./...                       # every game
 termcade dev build asteroid         # → asteroid/build/asteroid.tcade
-termcade add asteroid/build/asteroid.tcade
+termcade dev install asteroid/build/asteroid.tcade
 termcade                            # play it
 ```
 
