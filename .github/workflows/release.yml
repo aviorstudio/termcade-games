@@ -95,7 +95,7 @@ jobs:
           GAME: ${{ inputs.game }}
         run: |
           set -euo pipefail
-          go run github.com/aviorstudio/termcade@v0.0.4 dev build "$GAME"
+          go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
       - name: Tag and release
@@ -161,5 +161,5 @@ jobs:
             echo "::warning::TERMCADE_TOKEN is not set — the release exists on GitHub, but the marketplace has not been told about it. Publish it by hand with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade"
             exit 0
           fi
-          go run github.com/aviorstudio/termcade@v0.0.4 publish \
+          go run github.com/aviorstudio/termcade@v0.0.5 publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
