@@ -104,9 +104,10 @@ termcade publish https://github.com/aviorstudio/termcade-games asteroid-v0.0.1 a
 
 The registry fetches that asset once, validates it against the same manifest
 rules the arcade enforces, reads the game's id and version out of it, and
-records its sha256. Players download from GitHub and verify against that
-digest, so a release asset swapped afterwards fails rather than reaching
-anyone.
+records its sha256. Players download through the registry, which streams
+the package — clients never fetch from GitHub — and the arcade verifies
+the bytes against that digest, so a release asset swapped afterwards fails
+rather than reaching anyone.
 
 ## Writing your own
 
