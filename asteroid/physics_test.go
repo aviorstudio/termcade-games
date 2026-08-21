@@ -129,6 +129,11 @@ func TestRockShapeBounds(t *testing.T) {
 func TestWaveProgression(t *testing.T) {
 	g := &game{}
 	g.Reset()
+	// Reset time-seeds the RNG and spawns wave 1 with it; re-seed and
+	// respawn so the initial rocks and every split fragment are
+	// deterministic, as in TestSplitRock and TestRockShapeBounds.
+	g.rng = rand.New(rand.NewSource(42))
+	g.spawnWave()
 	if len(g.rocks) != 4 {
 		t.Fatalf("wave 1 spawned %d rocks, want 4", len(g.rocks))
 	}
