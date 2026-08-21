@@ -33,6 +33,11 @@ on:
 
 permissions: {}
 
+# Same isolation as CI: the package a player installs must be built against
+# the released sdk pinned in go.mod, never against a workspace's local tree.
+env:
+  GOWORK: off
+
 concurrency: release-${{ inputs.game }}
 
 jobs:
