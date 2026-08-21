@@ -77,8 +77,10 @@ type game struct {
 
 var info = sdk.Info{ID: "aviorstudio/asteroid", Title: "ASTEROID", PixelW: 72, PixelH: 40}
 
-// New constructs a fresh game; the arcade compiles it in as a builtin,
-// and cmd/wasm packages the same code as an installable .tcade.
+// New constructs a fresh game; cmd/wasm packages it as an installable
+// .tcade. Nothing is compiled into the arcade: the built package is
+// vendored into its starter pack and unpacked on first run, and the same
+// package installs from the marketplace like any other game.
 func New() sdk.Game { return &game{} }
 
 func (g *game) Info() sdk.Info { return info }
