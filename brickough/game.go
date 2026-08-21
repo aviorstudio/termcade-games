@@ -39,9 +39,10 @@ type game struct {
 
 var info = sdk.Info{ID: "aviorstudio/brickough", Title: "BRICKOUGH", PixelW: 64, PixelH: 40}
 
-// New constructs a fresh game; the wasm entrypoint registers it. Brickough
-// is deliberately not compiled into the arcade — it is the reference
-// installable game, and depends only on the sdk module, exactly like a
+// New constructs a fresh game; the wasm entrypoint registers it. Like
+// every game here, brickough is a .tcade package rather than code compiled
+// into the arcade: it is vendored into the starter pack and installs from
+// the marketplace, and depends only on the sdk module, exactly like a
 // third-party game would.
 func New() sdk.Game { return &game{} }
 
