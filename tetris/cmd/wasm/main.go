@@ -1,7 +1,8 @@
 //go:build wasip1
 
-// The tetris wasm guest: the same game the arcade compiles in, packaged
-// the way a third-party marketplace game would be.
+// The tetris wasm guest: packages the game as an installable .tcade.
+// Nothing is compiled into the arcade — the built package is vendored into
+// its starter pack and is what players install from the marketplace.
 package main
 
 import (
