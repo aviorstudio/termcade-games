@@ -8,4 +8,4 @@ module github.com/aviorstudio/termcade-games
 
 go 1.26.2
 
-require github.com/aviorstudio/termcade/sdk v0.0.1
+require github.com/aviorstudio/termcade/sdk v0.0.2

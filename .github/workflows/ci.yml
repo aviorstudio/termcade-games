@@ -18,6 +18,14 @@ on:
 permissions:
   contents: read
 
+# Never let a workspace decide which sdk these games build against. A go.work
+# (committed, or dropped next to the checkout) would silently swap the
+# released sdk in go.mod for a local tree, and CI would go green on code a
+# player cannot build. GOWORK=off forces module mode everywhere below, so
+# what CI proves is what `go get github.com/aviorstudio/termcade-games` sees.
+env:
+  GOWORK: off
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
