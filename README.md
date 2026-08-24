@@ -46,8 +46,9 @@ first-party catalog**. It republishes only the existing Asteroid, Tetris and
 Brickough v0.0.2 release assets through the same authenticated publish path.
 It does not rebuild packages, create releases, apply development seeds or write
 the registry database directly. The workflow fails closed when the scoped
-`TERMCADE_TOKEN` secret is unavailable or when dispatched from a branch other
-than `main`. Each request includes the package's previously reviewed SHA-256;
+`TERMCADE_TOKEN` secret is unavailable. Its recovery job runs only for a `main`
+dispatch; a non-main dispatch is skipped and is not recovery evidence. Each
+request includes the package's previously reviewed SHA-256;
 the registry compares that digest before writing. Exact existing entries are
 skipped, so retrying after a partial recovery converges. The workflow requires
 the expected-digest API guard from aviorstudio/termcade-be#69 to be deployed
