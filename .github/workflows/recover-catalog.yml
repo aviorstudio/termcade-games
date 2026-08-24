@@ -1,0 +1,90 @@
+name: Recover first-party catalog
+
+# Re-index the three existing first-party releases after loss of registry data.
+# This creates no GitHub release and touches no database directly: the scoped
+# key calls the same publish endpoint as the ordinary release workflow.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: recover-first-party-catalog
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Publish existing releases to the marketplace
+        env:
+          TERMCADE_TOKEN: ${{ secrets.TERMCADE_TOKEN }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          API = "https://api.termca.de"
+          REPO = "https://github.com/aviorstudio/termcade-games"
+          REQUIRED = (
+              ("aviorstudio/asteroid", "asteroid-v0.0.2", "asteroid.tcade", "e711411e37add9108a6eeecc33faf474251537eb61ed5a92e41736b640aab90e"),
+              ("aviorstudio/tetris", "tetris-v0.0.2", "tetris.tcade", "e86d121fddb30a5144f64860734142ad003363f10ed61e062ebc32755ae44545"),
+              ("aviorstudio/brickough", "brickough-v0.0.2", "brickough.tcade", "3b3acf64dd0eb4567c921669bac4717de1423e5f71fbc51749b8a55f96ad96b5"),
+          )
+
+          token = os.environ.get("TERMCADE_TOKEN", "")
+          if not token:
+              raise SystemExit("TERMCADE_TOKEN is required to recover the first-party catalog")
+
+          def request(method, path, body=None, authenticated=False):
+              data = None if body is None else json.dumps(body).encode()
+              headers = {"Content-Type": "application/json"} if data else {}
+              if authenticated:
+                  headers["Authorization"] = token
+              req = urllib.request.Request(API + path, data=data, headers=headers, method=method)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      return response.status, json.load(response)
+              except urllib.error.HTTPError as error:
+                  return error.code, None
+
+          def exact(entry, game_id, tag, asset, digest):
+              return entry is not None and all((
+                  entry.get("id") == game_id,
+                  entry.get("version") == "0.0.2",
+                  entry.get("repo") == REPO,
+                  entry.get("tag") == tag,
+                  entry.get("asset") == asset,
+                  entry.get("sha256") == digest,
+                  entry.get("abi") == 1,
+              ))
+
+          for game_id, tag, asset, digest in REQUIRED:
+              path = f"/v1/games/{game_id}/resolve?abi=1"
+              status, current = request("GET", path)
+              if status == 200:
+                  if not exact(current, game_id, tag, asset, digest):
+                      raise SystemExit(f"{game_id} exists but does not match the reviewed v0.0.2 release")
+                  print(f"{game_id} already restored with its reviewed digest")
+                  continue
+              if status != 404:
+                  raise SystemExit(f"could not inspect {game_id}: HTTP {status}")
+
+              status, _ = request("POST", "/v1/publish", {
+                  "repo": REPO,
+                  "tag": tag,
+                  "asset": asset,
+                  "expected_sha256": digest,
+              }, authenticated=True)
+              if status not in (201, 409):
+                  raise SystemExit(f"recovery did not restore {game_id} exactly (HTTP {status})")
+              status, published = request("GET", path)
+              if status != 200 or not exact(published, game_id, tag, asset, digest):
+                  raise SystemExit(f"recovery did not verify {game_id} exactly (HTTP {status})")
+              print(f"restored {game_id} with its reviewed digest")
+          PY
