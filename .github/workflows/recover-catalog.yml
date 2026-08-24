@@ -1,0 +1,30 @@
+name: Recover first-party catalog
+
+# Re-index the three existing first-party releases after loss of registry data.
+# This creates no GitHub release and touches no database directly: the scoped
+# key calls the same publish endpoint as the ordinary release workflow.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: recover-first-party-catalog
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.2'
+          cache: false
+
+      - name: Publish existing releases to the marketplace
+        env:
+          TERMCADE_TOKEN: ${{ secrets.TERMCADE_TOKEN }}
+        run: .github/scripts/recover-first-party-catalog.sh
