@@ -28,18 +28,19 @@ beside this one: `go generate ./internal/starter`.
 
 ## Releasing
 
-`release.yml` builds a game, tags it, cuts a GitHub release, and tells the
-marketplace about it — in that order, because publishing is a claim the
-registry verifies by fetching, so the asset has to exist first.
+`release.yml` builds a game, creates and verifies GitHub-hosted provenance for
+that exact `.tcade`, tags it, cuts a GitHub release, and tells the marketplace
+about it — in that order, because publishing is a claim the registry verifies
+by fetching, so the asset has to exist first.
 
 That last step needs a `TERMCADE_TOKEN` secret: a publish key scoped to the
 `aviorstudio` handle, made with `termcade keys new`. It publishes and nothing
 else — it cannot read a library, mint another key, or touch an account — so a
 leak is bounded by this one handle.
 
-Without the secret the release still cuts and the workflow warns, with the
-command to publish by hand. A release that failed after tagging is much harder
-to unpick than one the registry has not heard about yet.
+Without the secret the marketplace step fails closed and reports the command
+needed to finish publication after the scoped key is restored. The release
+asset is never rebuilt during that recovery.
 
 If registry data is rebuilt without those published rows, run **Recover
 first-party catalog**. It republishes only the existing Asteroid, Tetris and
@@ -104,6 +105,11 @@ that version is already tagged, and creates `<game>-v<version>` with the
 `.tcade` and its sha256 attached. Nothing else names a version — the registry
 reads the same field out of the package it fetches, so a tag derived from
 anywhere else could disagree with what the marketplace records.
+
+The release notes include a `gh attestation verify` command constrained to this
+repository, the release workflow, `main`, the source and workflow commit, the
+GitHub-hosted runner boundary, and SLSA provenance. This supplements the
+registry digest and package validation; it does not replace either control.
 
 Tags are `asteroid-v0.0.1`, not `asteroid/v0.0.1`: a slash would make Go read
 the tag as a module in a subdirectory and invent a version of a package nobody
