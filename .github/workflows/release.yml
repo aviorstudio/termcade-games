@@ -48,6 +48,8 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: write # create the tag and the release
+      id-token: write # mint the short-lived signing identity
+      attestations: write # publish package provenance
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -103,6 +105,29 @@ jobs:
           go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
+      # Sign the package produced above, before either release publication or
+      # marketplace publication. A failure here stops the release rather than
+      # leaving an unattested first-party package behind.
+      - name: Attest package provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: ${{ inputs.game }}/build/${{ inputs.game }}.tcade
+
+      - name: Verify package provenance policy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GAME: ${{ inputs.game }}
+        run: |
+          set -euo pipefail
+          gh attestation verify "$GAME/build/$GAME.tcade" \
+            --repo "$GITHUB_REPOSITORY" \
+            --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yml" \
+            --source-ref refs/heads/main \
+            --source-digest "$GITHUB_SHA" \
+            --signer-digest "$GITHUB_SHA" \
+            --deny-self-hosted-runners \
+            --predicate-type https://slsa.dev/provenance/v1
+
       - name: Tag and release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -127,6 +152,19 @@ jobs:
 
           The registry records that digest when it fetches this package, and
           the arcade refuses to install anything that does not match it.
+
+          Verify the GitHub-hosted build provenance:
+
+          \`\`\`sh
+          gh attestation verify $GAME.tcade \\
+            --repo $GITHUB_REPOSITORY \\
+            --signer-workflow $GITHUB_REPOSITORY/.github/workflows/release.yml \\
+            --source-ref refs/heads/main \\
+            --source-digest $GITHUB_SHA \\
+            --signer-digest $GITHUB_SHA \\
+            --deny-self-hosted-runners \\
+            --predicate-type https://slsa.dev/provenance/v1
+          \`\`\`
           NOTES
 
           gh release create "$TAG" \
@@ -146,10 +184,6 @@ jobs:
       # another key, not touch an account — so what a leak costs is bounded by
       # this one handle.
       #
-      # Skipped when the secret is absent, so a release still cuts on a fork or
-      # before the key exists. The registry can always be told later; a release
-      # that failed after tagging is much harder to unpick.
-      #
       # The secret is read into the environment and the step decides from
       # there, rather than through a step-level `if` on the secrets context —
       # that is the kind of expression that evaluates to something unhelpful
@@ -163,8 +197,8 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${TERMCADE_TOKEN:-}" ]; then
-            echo "::warning::TERMCADE_TOKEN is not set — the release exists on GitHub, but the marketplace has not been told about it. Publish it by hand with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade"
-            exit 0
+            echo "::error::TERMCADE_TOKEN is not set — refusing to report a complete first-party release without marketplace publication. After restoring the scoped key, publish with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade" >&2
+            exit 1
           fi
           go run github.com/aviorstudio/termcade@v0.0.5 publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
