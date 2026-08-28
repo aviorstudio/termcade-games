@@ -46,14 +46,17 @@ jobs:
 
       - run: go vet ./...
       - run: go test ./...
+      - name: Check release workflow policy
+        run: python3 scripts/check-release-workflow.py .github/workflows/release.yml
 
       # Same pinned arcade the release workflow builds with, for the same
       # reason: what CI proves buildable is what a release will produce.
       - name: Package every game
         run: |
           set -euo pipefail
-          for dir in */termcade.toml; do
-            game="$(dirname "$dir")"
+          for dir in ./*/termcade.toml; do
+            game="${dir#./}"
+            game="${game%/termcade.toml}"
             go run github.com/aviorstudio/termcade@v0.0.5 dev build "$game"
           done
-          sha256sum */build/*.tcade
+          sha256sum ./*/build/*.tcade
