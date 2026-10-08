@@ -39,24 +39,9 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
-        with:
-          go-version-file: go.mod
-          cache-dependency-path: go.sum
+      - uses: jdx/mise-action@7a4e45a543138629540c9a1616d08632b893e492 # v5.0.1
+      - name: Install pinned build and validation tools
+        run: make install
 
-      - run: go vet ./...
-      - run: go test ./...
-      - name: Check release workflow policy
-        run: python3 scripts/check-release-workflow.py .github/workflows/release.yml
-
-      # Same pinned arcade the release workflow builds with, for the same
-      # reason: what CI proves buildable is what a release will produce.
-      - name: Package every game
-        run: |
-          set -euo pipefail
-          for dir in ./*/termcade.toml; do
-            game="${dir#./}"
-            game="${game%/termcade.toml}"
-            go run github.com/aviorstudio/termcade@v0.0.5 dev build "$game"
-          done
-          sha256sum ./*/build/*.tcade
+      - name: Check every game and released-consumer package
+        run: make check

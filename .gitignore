@@ -3,3 +3,6 @@
 # termcade dev build writes into <game>/build/.
 */build/
 *.tcade
+
+.artifacts/
+__pycache__/
