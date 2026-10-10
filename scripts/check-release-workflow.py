@@ -74,7 +74,8 @@ def check(path: Path) -> list[str]:
         "--predicate-type https://slsa.dev/provenance/v1",
         'if [ -z "${TERMCADE_TOKEN:-}" ]; then',
         "exit 1",
-        "go run github.com/aviorstudio/termcade@v0.0.5 publish",
+        "TERMCADE_TOKEN: ${{ secrets.TERMCADE_API_KEY }}",
+        "go run github.com/aviorstudio/termcade@v0.0.13 publish",
     ]
     for fragment in required_fragments:
         if fragment not in text:

@@ -17,6 +17,7 @@ lint:
 	mise exec -- shellcheck scripts/build.sh
 test:
 	mise exec -- go test ./...
+	mise exec -- python3 scripts/test-recover-catalog.py
 build:
 	mise exec -- bash scripts/build.sh
 check: lint test build
