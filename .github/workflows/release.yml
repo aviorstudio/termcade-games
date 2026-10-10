@@ -190,14 +190,14 @@ jobs:
       # would leave the marketplace quietly out of date.
       - name: Publish to the marketplace
         env:
-          TERMCADE_TOKEN: ${{ secrets.TERMCADE_TOKEN }}
+          TERMCADE_TOKEN: ${{ secrets.TERMCADE_API_KEY }}
           GAME: ${{ inputs.game }}
           TAG: ${{ steps.version.outputs.tag }}
         run: |
           set -euo pipefail
           if [ -z "${TERMCADE_TOKEN:-}" ]; then
-            echo "::error::TERMCADE_TOKEN is not set — refusing to report a complete first-party release without marketplace publication. After restoring the scoped key, publish with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade" >&2
+            echo "::error::TERMCADE_API_KEY is not set — refusing to report a complete first-party release without marketplace publication. After restoring the scoped key, publish with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade" >&2
             exit 1
           fi
-          go run github.com/aviorstudio/termcade@v0.0.5 publish \
+          go run github.com/aviorstudio/termcade@v0.0.13 publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
