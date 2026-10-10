@@ -20,32 +20,33 @@ jobs:
     steps:
       - name: Publish existing releases to the marketplace
         env:
-          TERMCADE_TOKEN: ${{ secrets.TERMCADE_TOKEN }}
+          TERMCADE_API_KEY: ${{ secrets.TERMCADE_API_KEY }}
         shell: bash
         run: |
           python3 - <<'PY'
           import json
           import os
+          import re
           import urllib.error
           import urllib.request
 
           API = "https://api.termca.de"
           REPO = "https://github.com/aviorstudio/termcade-games"
           REQUIRED = (
-              ("aviorstudio/asteroid", "asteroid-v0.0.2", "asteroid.tcade", "e711411e37add9108a6eeecc33faf474251537eb61ed5a92e41736b640aab90e"),
+              ("aviorstudio/asteroid", "asteroid-v0.0.3", "asteroid.tcade", "3275f6d20a5c1e59c454bc6d0b96867bb5374e179700fad6b69e498286de3b3e"),
               ("aviorstudio/tetris", "tetris-v0.0.2", "tetris.tcade", "e86d121fddb30a5144f64860734142ad003363f10ed61e062ebc32755ae44545"),
               ("aviorstudio/brickough", "brickough-v0.0.2", "brickough.tcade", "3b3acf64dd0eb4567c921669bac4717de1423e5f71fbc51749b8a55f96ad96b5"),
           )
 
-          token = os.environ.get("TERMCADE_TOKEN", "")
-          if not token:
-              raise SystemExit("TERMCADE_TOKEN is required to recover the first-party catalog")
+          token = os.environ.get("TERMCADE_API_KEY", "")
+          if not re.fullmatch(r"ak_[A-Za-z0-9_-]{17,509}", token):
+              raise SystemExit("TERMCADE_API_KEY must be a Clerk publishing key")
 
           def request(method, path, body=None, authenticated=False):
               data = None if body is None else json.dumps(body).encode()
               headers = {"Content-Type": "application/json"} if data else {}
               if authenticated:
-                  headers["Authorization"] = token
+                  headers["Authorization"] = "Bearer " + token
               req = urllib.request.Request(API + path, data=data, headers=headers, method=method)
               try:
                   with urllib.request.urlopen(req, timeout=30) as response:
@@ -56,7 +57,7 @@ jobs:
           def exact(entry, game_id, tag, asset, digest):
               return entry is not None and all((
                   entry.get("id") == game_id,
-                  entry.get("version") == "0.0.2",
+                  entry.get("version") == tag.rsplit("-v", 1)[1],
                   entry.get("repo") == REPO,
                   entry.get("tag") == tag,
                   entry.get("asset") == asset,
@@ -69,10 +70,9 @@ jobs:
               status, current = request("GET", path)
               if status == 200:
                   if not exact(current, game_id, tag, asset, digest):
-                      raise SystemExit(f"{game_id} exists but does not match the reviewed v0.0.2 release")
-                  print(f"{game_id} already restored with its reviewed digest")
-                  continue
-              if status != 404:
+                      raise SystemExit(f"{game_id} exists but does not match the reviewed release")
+                  print(f"{game_id} already restored; verifying publishing access")
+              elif status != 404:
                   raise SystemExit(f"could not inspect {game_id}: HTTP {status}")
 
               status, _ = request("POST", "/v1/publish", {
