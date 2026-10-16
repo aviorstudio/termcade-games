@@ -37,7 +37,7 @@ def check(path: Path) -> list[str]:
             f"release job permissions must be exactly {expected_permissions}, got {permissions}"
         )
 
-    external_actions = re.findall(r"(?m)^\s*- uses: ([^\s@]+)@([^\s]+)", text)
+    external_actions = re.findall(r"(?m)^\s*(?:- )?uses: ([^\s@]+)@([^\s]+)", text)
     for action, revision in external_actions:
         if not re.fullmatch(r"[0-9a-f]{40}", revision):
             failures.append(f"{action} must be pinned to a full 40-character SHA")
@@ -52,15 +52,18 @@ def check(path: Path) -> list[str]:
     if text.count(subject_line) != 1:
         failures.append(f"attestation subject must be exactly {SUBJECT}")
 
+    # Check the operations themselves: display labels and YAML quoting are
+    # presentation, not the release security contract.
     ordered_steps = [
-        "      - name: Build the package",
-        "      - name: Attest package provenance",
-        "      - name: Verify package provenance policy",
-        "      - name: Tag and release",
-        "      - name: Publish to the marketplace",
+        'go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"',
+        attestation_use,
+        'gh attestation verify "$GAME/build/$GAME.tcade"',
+        'gh release create "$TAG"',
+        "go run github.com/aviorstudio/termcade@v0.0.13 publish",
     ]
     positions = [text.find(step) for step in ordered_steps]
-    if -1 in positions or positions != sorted(positions) or len(set(positions)) != len(positions):
+    if (any(text.count(step) != 1 for step in ordered_steps)
+            or positions != sorted(positions) or len(set(positions)) != len(positions)):
         failures.append("release steps must remain build, attest, verify, release, publish")
 
     required_fragments = [
