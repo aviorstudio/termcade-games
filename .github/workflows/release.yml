@@ -1,4 +1,4 @@
-name: Release a game
+name: "Release"
 
 # Cut one game's release: build its .tcade, tag it, and publish a GitHub
 # release with the package attached.
@@ -42,6 +42,7 @@ concurrency: release-${{ inputs.game }}
 
 jobs:
   release:
+    name: "Release"
     runs-on: blacksmith-4vcpu-ubuntu-2404
     # Bounded, so a step that hangs fails here rather than sitting until the
     # runner's own timeout hours later.
@@ -51,11 +52,13 @@ jobs:
       id-token: write # mint the short-lived signing identity
       attestations: write # publish package provenance
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: "Check out source"
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
-      - uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
+      - name: "Set up tools"
+        uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Install pinned build and validation tools
         run: make install
 
@@ -107,7 +110,7 @@ jobs:
       # Sign the package produced above, before either release publication or
       # marketplace publication. A failure here stops the release rather than
       # leaving an unattested first-party package behind.
-      - name: Attest package provenance
+      - name: "Attest build provenance"
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
           subject-path: ${{ inputs.game }}/build/${{ inputs.game }}.tcade
