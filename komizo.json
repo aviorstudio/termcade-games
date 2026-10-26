@@ -62,7 +62,7 @@
       ]
     ],
     "artifact-check": {
-      "inapplicable": "The caller build uses the pinned Termcade package compiler, which validates each WASM package"
+      "inapplicable": "The caller build uses the pinned termcade package compiler, which validates each WASM package"
     },
     "dev": {
       "inapplicable": "Interactive CLI usage requires a caller-owned terminal and configuration"
