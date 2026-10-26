@@ -1,12 +1,8 @@
-# termcade-games
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: aa6b78a79f7c934c2c185647415443377630aa42afe55fddcc9a3fbce3eaf184 -->
 
-Every game aviorstudio publishes to the
-[termcade](https://github.com/aviorstudio/termcade) marketplace.
+# Termcade games
 
-The arcade compiles no games in: these are `.tcade` packages in the wasm
-sandbox, same as anybody's. All three are also vendored into the arcade as a
-starter pack and unpacked on first run, so a fresh termcade is playable
-before it has an account or a network. They install the ordinary way too:
+Asteroid, Tetris and Brickough are WebAssembly games for [Termcade](https://github.com/aviorstudio/termcade).
 
 ```sh
 termcade add aviorstudio/asteroid
@@ -14,125 +10,14 @@ termcade add aviorstudio/tetris
 termcade add aviorstudio/brickough
 ```
 
-The source stays here rather than in the arcade so the two move separately —
-a game changes without a release of termcade, and the SDK contract is the
-only thing between them.
+Each game has a `termcade.toml` manifest and builds into its own `build/` directory. Run it through a caller-owned Termcade session.
 
-The bundling is a real cost, worth naming: a game that arrives prebundled
-does not exercise resolve/fetch/verify, so the registry path can rot without
-a first-party game noticing. It has to be covered on its own rather than by
-these three happening to use it.
+## Development
 
-To refresh the vendored packs after changing a game, from a termcade checkout
-beside this one: `go generate ./internal/starter`.
-
-## Releasing
-
-`release.yml` builds a game, creates and verifies GitHub-hosted provenance for
-that exact `.tcade`, tags it, cuts a GitHub release, and tells the marketplace
-about it — in that order, because publishing is a claim the registry verifies
-by fetching, so the asset has to exist first.
-
-That last step needs a `TERMCADE_TOKEN` secret: a publish key scoped to the
-`aviorstudio` handle, made with `termcade keys new`. It publishes and nothing
-else — it cannot read a library, mint another key, or touch an account — so a
-leak is bounded by this one handle.
-
-Without the secret the marketplace step fails closed and reports the command
-needed to finish publication after the scoped key is restored. The release
-asset is never rebuilt during that recovery.
-
-If registry data is rebuilt without those published rows, run **Recover
-first-party catalog**. It republishes only the existing Asteroid, Tetris and
-Brickough v0.0.2 release assets through the same authenticated publish path.
-It does not rebuild packages, create releases, apply development seeds or write
-the registry database directly. The workflow fails closed when the scoped
-`TERMCADE_TOKEN` secret is unavailable. Its recovery job runs only for a `main`
-dispatch; a non-main dispatch is skipped and is not recovery evidence. Each
-request includes the package's previously reviewed SHA-256;
-the registry compares that digest before writing. Exact existing entries are
-skipped, so retrying after a partial recovery converges. The workflow requires
-the expected-digest API guard from aviorstudio/termcade-be#69 to be deployed
-first. Verify the deployed catalog and clients separately afterward.
-
-## The games
-
-| Game | What it is |
-| --- | --- |
-| **asteroid** | Asteroids-style rock shooter. Inertial ship on a wrapping field; big rocks split into faster small ones. |
-| **tetris** | Falling-block stacker. Super Rotation System kicks, a 7-bag randomizer, ghost piece, lock delay, and gravity that tightens by level. |
-| **brickough** | Breakout-style brick breaker. Steer the ball with paddle english, clear the wall, survive the speed-up. |
-
-## Layout
-
-One Go module, one directory per game:
-
-```
-asteroid/
-├── termcade.toml     manifest: id, version, playfield, controls
-├── game.go           the sdk.Game implementation
-├── *_test.go
-└── cmd/wasm/main.go  the wasip1 entrypoint, ~8 lines
-```
-
-Games depend on `github.com/aviorstudio/termcade/sdk` and nothing else. One
-module for all of them is deliberate: they then share one sdk version, so an
-SDK contract change breaks every game here at once and in CI, rather than
-drifting game by game until someone tries to rebuild an old one.
-
-## Working on a game
-
-Requires [mise](https://mise.jdx.dev) for the pinned Go (`mise install`).
+Install the [Komizo release](https://github.com/nicodes/komizo#install) matching `komizo.lock`.
 
 ```sh
-go test ./...                       # every game
-termcade dev build asteroid         # → asteroid/build/asteroid.tcade
-termcade dev install asteroid/build/asteroid.tcade
-termcade                            # play it
+komizo check        # Complete project checks
+komizo run build    # Build the declared distributable artifacts
+komizo describe     # Inspect tools and focused stages
 ```
-
-`go test` only proves a game compiles for the host. A game reaches players as
-a wasip1 reactor module exporting the termcade ABI, and `dev build` is what
-checks that — so CI packages every game on every push, not just tests it.
-
-## Releasing
-
-Bump `version` in the game's `termcade.toml`, merge, then run the **Release a
-game** workflow and pick the game.
-
-The manifest decides the version. The workflow reads it, refuses to run if
-that version is already tagged, and creates `<game>-v<version>` with the
-`.tcade` and its sha256 attached. Nothing else names a version — the registry
-reads the same field out of the package it fetches, so a tag derived from
-anywhere else could disagree with what the marketplace records.
-
-The release notes include a `gh attestation verify` command constrained to this
-repository, the release workflow, `main`, the source and workflow commit, the
-GitHub-hosted runner boundary, and SLSA provenance. This supplements the
-registry digest and package validation; it does not replace either control.
-
-Tags are `asteroid-v0.0.1`, not `asteroid/v0.0.1`: a slash would make Go read
-the tag as a module in a subdirectory and invent a version of a package nobody
-imports.
-
-Then point the marketplace at the release:
-
-```sh
-termcade publish https://github.com/aviorstudio/termcade-games asteroid-v0.0.1 asteroid.tcade
-```
-
-The registry fetches that asset once, validates it against the same manifest
-rules the arcade enforces, reads the game's id and version out of it, and
-records its sha256. Players download through the registry, which streams
-the package — clients never fetch from GitHub — and the arcade verifies
-the bytes against that digest, so a release asset swapped afterwards fails
-rather than reaching anyone.
-
-## Writing your own
-
-Nothing here is special. `termcade dev new you/mygame` scaffolds a game that
-already runs, and [the SDK docs](https://github.com/aviorstudio/termcade/blob/main/docs/sdk.md)
-are the whole contract — 60 ticks a second, eight keys, a canvas in square
-logical units, and a
-[frozen wasm ABI](https://github.com/aviorstudio/termcade/blob/main/docs/abi.md)
-if you would rather not write Go.
