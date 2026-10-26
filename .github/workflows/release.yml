@@ -44,6 +44,8 @@ jobs:
   release:
     name: "Release"
     runs-on: ubuntu-24.04
+    env:
+      MISE_GITHUB_TOKEN: ${{ github.token }}
     # Bounded, so a step that hangs fails here rather than sitting until the
     # runner's own timeout hours later.
     timeout-minutes: 20
@@ -58,9 +60,13 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
+        uses: nicodes/komizo/setup@6458b3e1328805b485c91ba1f09211f5bd45431b
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
-        run: make install
+        uses: nicodes/komizo/run@6458b3e1328805b485c91ba1f09211f5bd45431b
+        with:
+          target: install
 
       - name: Read the version out of the manifest
         id: version
@@ -94,7 +100,9 @@ jobs:
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - name: Test
-        run: make lint test
+        uses: nicodes/komizo/run@6458b3e1328805b485c91ba1f09211f5bd45431b
+        with:
+          target: lint test
 
       # The arcade is the build tool. Pinning it to a released version means a
       # package is built by a termcade a player could also be running, rather
@@ -104,7 +112,7 @@ jobs:
           GAME: ${{ inputs.game }}
         run: |
           set -euo pipefail
-          go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"
+          komizo exec --tools go -- go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
       # Sign the package produced above, before either release publication or
@@ -202,5 +210,5 @@ jobs:
             echo "::error::TERMCADE_API_KEY is not set — refusing to report a complete first-party release without marketplace publication. After restoring the scoped key, publish with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade" >&2
             exit 1
           fi
-          go run github.com/aviorstudio/termcade@v0.0.13 publish \
+          komizo exec --tools go -- go run github.com/aviorstudio/termcade@v0.0.13 publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
