@@ -60,11 +60,11 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: nicodes/komizo/setup@54da2b6d20fda9febf3cd02039424a1a8249cffb
+        uses: nicodes/komizo/setup@1b740f28682948a2d5eb4613744bb262d2056e6c
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
-        uses: nicodes/komizo/run@54da2b6d20fda9febf3cd02039424a1a8249cffb
+        uses: nicodes/komizo/run@1b740f28682948a2d5eb4613744bb262d2056e6c
         with:
           target: install
 
@@ -100,7 +100,7 @@ jobs:
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - name: Test
-        uses: nicodes/komizo/run@54da2b6d20fda9febf3cd02039424a1a8249cffb
+        uses: nicodes/komizo/run@1b740f28682948a2d5eb4613744bb262d2056e6c
         with:
           target: lint test
 
