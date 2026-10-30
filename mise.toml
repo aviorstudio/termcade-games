@@ -1,0 +1,53 @@
+[tools]
+"python" = "3.13.11"
+"go" = "1.27.3"
+"go:golang.org/x/vuln/cmd/govulncheck" = "1.7.0"
+"actionlint" = "1.7.12"
+"shellcheck" = "0.11.0"
+
+[env]
+TOOLS_ROOT = "{{ get_env(name='TOOLS_ROOT', default=config_root ~ '/.ci-tools') }}"
+GOTOOLCHAIN = "local"
+PYTHONDONTWRITEBYTECODE = "1"
+
+[tasks."install"]
+run = ["env GOWORK=off go mod download"]
+
+[tasks."lint"]
+run = ["env GOWORK=off go vet ./...", "python3 scripts/check-release-workflow.py .github/workflows/release.yml", "actionlint", "shellcheck scripts/build.sh"]
+
+[tasks."unit"]
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" test --name unit --artifact asteroid/build --artifact brickough/build --artifact tetris/build -- mise run _unit"
+depends = ["install"]
+
+[tasks."build"]
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" build --name build --artifact asteroid/build --artifact brickough/build --artifact tetris/build -- mise run _build"
+depends = ["install"]
+
+[tasks."vuln"]
+run = ["govulncheck ./..."]
+
+[tasks."clean"]
+run = ["python3 -c 'import shutil; [shutil.rmtree(p,ignore_errors=True) for p in ['\"'\"'asteroid/build'\"'\"', '\"'\"'brickough/build'\"'\"', '\"'\"'tetris/build'\"'\"', '\"'\"'.artifacts'\"'\"']]'"]
+
+[tasks."_build"]
+run = ["bash scripts/build.sh"]
+hide = true
+
+[tasks."_unit"]
+run = ["env GOWORK=off go test ./...", "python3 scripts/test-recover-catalog.py"]
+hide = true
+
+[tasks."_test-stages"]
+run = [{"task" = "unit"}]
+hide = true
+
+[tasks."test"]
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" session --test unit -- mise run _test-stages"
+
+[tasks."_check-stages"]
+run = [{"task" = "install"}, {"task" = "lint"}, {"task" = "unit"}, {"task" = "build"}, {"task" = "vuln"}]
+hide = true
+
+[tasks."check"]
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" session --test unit -- mise run _check-stages"
