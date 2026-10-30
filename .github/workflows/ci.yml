@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - name: Set up development tools
+    - name: Set up locked komizo
       uses: nicodes/tools/setup@091101094fedf5ce2e67c339c1c9c842d6a662dc
       env:
         GH_TOKEN: ${{ github.token }}
@@ -37,7 +37,8 @@ jobs:
       if: github.event_name == 'pull_request'
       env:
         EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
-      run: python3 "$TOOLS_ROOT/helpers/integration-identity.py"
+      run: |
+        python3 "$TOOLS_ROOT/helpers/integration-identity.py"
     - name: Upload artifacts
       if: github.event_name == 'pull_request'
       uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
@@ -49,6 +50,6 @@ jobs:
         include-hidden-files: true
     - name: Check project
       shell: bash
-      run: |-
+      run: |
         set -euo pipefail
         mise run check
