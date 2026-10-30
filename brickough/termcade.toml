@@ -1,7 +1,7 @@
 [game]
 id          = "aviorstudio/brickough"
 name        = "Brickough"
-version     = "0.0.2"
+version     = "0.0.3"
 description = "Breakout-style brick breaker"
 
 [requirements]
