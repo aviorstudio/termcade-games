@@ -1,7 +1,7 @@
 [game]
 id          = "aviorstudio/tetris"
 name        = "Tetris"
-version     = "0.0.3"
+version     = "0.1.0"
 description = "Falling tetromino line clearer"
 
 [requirements]

@@ -7,11 +7,7 @@ name: "Release"
 # fixing Tetris is no reason to re-release Asteroid, and a shared version
 # number across unrelated games would be meaningless to the marketplace.
 #
-# Tags are `<game>-v1.2.3`, NOT `<game>/v1.2.3`. A slash would make Go read the
-# tag as a module in a subdirectory and mint a phantom
-# `github.com/aviorstudio/termcade-games/<game>@v1.2.3`; the hyphen is
-# invisible to it. Nothing here is a Go dependency of anything, and it should
-# stay that way.
+# Independent immutable tags remain `<game>-v1.2.3`.
 #
 # THE MANIFEST DECIDES THE VERSION. There is no bump input: the workflow reads
 # `version` out of <game>/termcade.toml and refuses to run if that version is
@@ -33,10 +29,9 @@ on:
 
 permissions: {}
 
-# Same isolation as CI: the package a player installs must be built against
-# the released sdk pinned in go.mod, never against a workspace's local tree.
+# Use the Rust toolchain and exact SDK revision locked by this repository.
 env:
-  GOWORK: off
+  RUSTUP_TOOLCHAIN: 1.94.0
 
 concurrency: release-${{ inputs.game }}
 
@@ -60,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: nicodes/tools/setup@091101094fedf5ce2e67c339c1c9c842d6a662dc
+        uses: nicodes/tools/setup@f412061a7a3f0914db9e09d1159e69504aee8706
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
@@ -115,7 +110,7 @@ jobs:
           GAME: ${{ inputs.game }}
         run: |
           set -euo pipefail
-          go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"
+          bash scripts/build.sh "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
       # Sign the package produced above, before either release publication or
@@ -183,6 +178,7 @@ jobs:
           gh release create "$TAG" \
             "$GAME/build/$GAME.tcade" \
             "$GAME/build/$GAME.tcade.sha256" \
+            THIRD_PARTY_NOTICES.txt \
             --target "$GITHUB_SHA" --title "$GAME $VERSION" --notes-file notes.md
 
       # Tell the marketplace the release exists.
@@ -213,5 +209,5 @@ jobs:
             echo "::error::TERMCADE_API_KEY is not set — refusing to report a complete first-party release without marketplace publication. After restoring the scoped key, publish with: termcade publish https://github.com/$GITHUB_REPOSITORY $TAG $GAME.tcade" >&2
             exit 1
           fi
-          go run github.com/aviorstudio/termcade@v0.0.13 publish \
+          .artifacts/termcade-tool/termcade publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
