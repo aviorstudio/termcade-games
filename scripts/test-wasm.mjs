@@ -10,7 +10,7 @@ const names = ['termcade_abi','termcade_init','termcade_playfield','termcade_res
 for (const [game,width] of games) {
   const module = new WebAssembly.Module(readFileSync(join(target,'wasm32-wasip1','release',`termcade_${game}.wasm`)));
   for (const entry of WebAssembly.Module.imports(module)) assert.equal(entry.module,'wasi_snapshot_preview1');
-  for (const [cols,rows] of [[1,2],[2,2],[2,3],[3,3]]) {
+  for (const [cols,rows] of [[1,2],[2,2],[2,3],[3,3],[4,4],[8,8]]) {
     const wasi = new WASI({ version:'preview1', args:[], env:{}, preopens:{}, returnOnExit:true });
     const instance = new WebAssembly.Instance(module,wasi.getImportObject());
     wasi.initialize(instance);
