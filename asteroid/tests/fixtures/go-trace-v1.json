@@ -1,0 +1,1922 @@
+[
+  {
+    "seed": 1,
+    "shape": "half",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "f0501b2870b2e4846a62ea9bcd83be88701f31f485cf4018a5e6841b79c6bc3a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "09219da7bc9d4151015a53c2f7cac858ea06fa6c2c81aa1243a3f8477436ed2d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "9fac99a4d9f94e39e2e5df3ccaac4ce10bae3d65341fd9b4bbb84317058f453c",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "12c06e233f5e6723747b4b1306d5c2e966d48ddfde5747c9a1aa702001b4d738",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "aa167418918e05f943d8054fb6dbc8084471da8fadd7b0a1db0dbd7e08352ec9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "8e80a16f06a52ad256f2ee3e3d04a33dfff0fe80d1c43ebe1e4ed29d51f0def2",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "564c3d5da68bc86353c0c01f5190941b4907bf7883394084e37b4f877c4d220b",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "fd6bea89192329074c26e44bc44509b84355566e1b328a046fcecef14dc72d59",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "cf6b639ded94a09de353a0ed2cda913527a805d704243fc888eeb1688b412731",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "quad",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "1c8a54eb1cb575ed13434a547d81793b3da1ba717bb42de594ed7143d827efe7",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "9cc8ef7585a0f6d220b09694328994a77ddf0702809f55f9da3c87492428cde0",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "20ecddf4da0470af002e2fc17448db60b7632eb3d4b19757db605d0057b878f1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "f5adb5deeb933e74332233199b1221176c5cbcbe2f6633e731f965e643a5bec4",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "ead8f76ab03f5693686c4653c77f8c4684c850361ab73dd99914883aed91b597",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "9dcb8c420cd8b00462a756ab385a2ba253f4f27b67112e0329bb7e7c40ddf311",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "b393d39da09a8b1448804a26544eeecc04641c32f3a0ac71c277d3acd71f8a9f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "851cfdf11be86936cd3c141acfa199ab8333798eb4d56271b16b9c1e83d5ee71",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "647191d481a7cd3a7573244e517a1654d73dfabb9de9e86f3634454119d4d6e6",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "sextant",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "d4268df71f7b4744e2cfbae89e5aa1c37df13db51dda9f594e22b00a5bf1c162",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "4d4f023938381406c7d57c1c956dc9bc2cfd983be1c9b807e2235df151f74abe",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "73478fb8cae99e9ebee6daf4a55d05fb3b728f78cb447be503d75b03da03c330",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "e69495e02aa8cf26bb17cb24b78c469033fff954a0c26bad2c657039557423f6",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "2df8afdd9cef290a34dd9c28a32eefd8db946efed6d22a4609c76ef4c8b70e5d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "05ce7dcf368407ea833ae9a7da4a09b7b90cdc65b73f8af624be539cc1fe2211",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "305d2cfa6d29c241525545150b416b38e915fb9e50999a06295861e250dcdf7c",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "8be24734a1ab7759b02a5f40064986a8a58f088d9e716e3894ac306fe9dc5267",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "cf738bbf5637dd2a836dee8380db4ca7d7df183a36b32ce124793ed0b244e0d9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "ascii",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "3107a5f81dbb4735a9e57fd1bea6111cc6109b329d9b29926469b8cd44ef0231",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "82ad1f27d6efe84792d0c160fbd363d5288a88055657190c86f4d05549fc96a7",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "2d4e397a17ce4011921c03645ee1c5e9fb047317187af82edcbd0a09fafb493a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "018ae8ef1e8c4ea5d6b58b2c818947f52e3b2249a10e4621789f521d2aa583ff",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "67084f929d8a3b6c352e4f27a4267ca594960d9ad9b10e24b82fff1a60c908b5",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "2587a4dce340a64103e9fae5412e107214532328742f0f665be2d8d7d16e551f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "e4f3527a9868e3502f777a6fd334cd041bfbfa6a0f9394f5d98b67ef3e921248",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "d337fd9192ccd8f4bfc94e6f760b8291354f8bc14a8c213ff7b6a011bdb3d75c",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "ae009b215f287f734b1548a61e85f3c7d8429bd6cca351f3cec25dc458cb37a9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "half",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "e17e5ca133a3172ece7e63a92b448e4ffe31389562496971f0d3b0043ae31e39",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "19a390f0ef547364e381c4f58b1cb490fa273839e8fc1e062ca70e354e140cae",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "a5af6ec9a068762841d92eeb38fe95a669e32220f1fa4242307f8973153ad823",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "81d8bae7070a3cbd5fc4727d0d9d4f3d8d96a4132ffd57af5acfb5b4831c622c",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "09e30cd3fc871f5262dfc363c8152c50e298ab6d1d553faaa6a7287fc13067a8",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "f650f1d8d5e3697300276e685c0ff43718d12ba3b9e3b5491bddefee729a0567",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "c9d6bdc3810ab2133eb1cc2cbe0c15e1f0ceffe0ea3de2f19f62c66facbbc2dc",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "8c293de23a65a305920d9bf7066ecca201a665661e43efabe10f42f0aa2bbc15",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "51fc33e56c84dc165a18ceef3df75cca4b785750b4193949d891ad8008370bc4",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "quad",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "0cb88db109147f78477080c6d304de6d003e762b52830f71ede794f39c34b767",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "bdf370d8609a364c3411f97bc596fbd2b241743ce6a2a511d5e183fc08a48d67",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "e09300a367058ba21bff23e1d727601589a585f3d13b66d367ce56a30a9c45ef",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "affd4be2499e10bf23d9d973f716c7822f97da9b726e4c219da2092773cf558d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "aac1aa90034de73af5395a109f829b5de9a1b752bc947e36dc9ed18ab514b491",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "0b554bb68e70102e85abcd9576e4582cd34fae4db93d743103316cc960c8919e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "692a472b05c3546032cbd98b003c841d21402a08a795baa7e47b5d3b4290e32f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "ffcc7d014e09505ed9539e1803dafbf1ee5ee1d0ff09c87a73dfbc4a6d76894d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "ac78a2adb1f2ed317de6e4059ebb51dfeed80547eee02994f52293a496ee1cd0",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "sextant",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "c969e321bd124c457972640d42d7396388b0a89ad72c213af9bb40b99bce5d68",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "799d27153ea848302bbd50db0133c46abb04f3f439ed740a8d0d863335302409",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "eb71e364b202b387bd2ebe60fe258eb9c090166739478537d7e44c79d8e89e6d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "3012184f1805aa04a6955ab4c51ac9a1ade8708c1d0c66d9b1ad962732b56009",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "bdfd41d7269a9f329bd139829caf7b0a061b6e64c50c3c8d911a7f5e97426151",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "f80f46a2512b33d063290bbdb821cd64e6998632e37ad0eff0fa25648773112e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "5e30b28f6f6ff056efc3921a49af74b3db3997c2cd82ff312e1d626c71303891",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "60f936d15beef834b57e4af37013c6f672bbdccb6bd29c697700a4fa349a3242",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "e1d2a69864d013be7c5c5943fe412258cbc70a5da3e6df7775ea8d8e07e52071",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "ascii",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "4ebd45784052b06e1b26c4e9f6354642859b5724d23b12c810e9f9510b5464dd",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "cb15ebb66b7edecb1b8791c0f259ee7018ce3830b8ae514b18bd89005f01f4e7",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "c2456686cb6a1cb1962c190fa3c3ebb8c88d7eda9e6a389ffea45995b5b12557",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 0,
+        "status": 0,
+        "pixels": "0298fea8d64e3506ce1a32c08b4e7cc5a622a5affae69c71cc1d6ff5d83484b1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 0,
+        "status": 0,
+        "pixels": "4aacf36c91ba0506fe1b920876653f575dabe2b3459154c53071c4f9b807ddd1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 0,
+        "status": 0,
+        "pixels": "f38f22a1a4df67fdb9a86bd0abf2493f71c2dd149dff94dfe4f5e8924f978b6f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 0,
+        "status": 0,
+        "pixels": "c845515eac3021b1bcc82957e98425f5d69118d9785587c74f31d42d97e26b92",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 0,
+        "status": 0,
+        "pixels": "2022e3df998ff22d23b9ae8d90ec3fede4da9bda2eba9b445e90681541191af1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 0,
+        "status": 0,
+        "pixels": "fefe15957c9301bc7fc81e03828bdb3b802c48c247e8e91a74c8a94e04103fc0",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "WAVE",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "",
+              "Value": "▲ ▲ ▲",
+              "Accent": true
+            }
+          ],
+          "Hint": "←/→ turn · ↑ thrust · space fire"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1922 @@
+[
+  {
+    "seed": 1,
+    "shape": "half",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "9984c3c8cf5c27f0c4a7f1853be456410ff1f0afa6d4a6de0fe9f060793a9d4d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "d92510a511dc4e5cc5339de0490d0f3a619eb340f6b35b6e95998b539b564342",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "454f69e7f56fc83a3918d15648f466085fabf1478239cfe4b8be4ca0bf5951f4",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "3f60b4d97ab702262ed0b2c971afcf22def1114a8d0005025aa2fa47cae577b6",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "ebaed9b0f0dca46d5606bf6fe2e293d8adeff15723369583b0d6ecdd48ae328d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "549fb2e2daec7e18c4b52b9c2ac2aee1d46572e8eecfb422481c3ecbcf512cee",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 59,
+        "status": 0,
+        "pixels": "03d2235d68086362eff7cd9e4d118642c7664a42864c156552df107c5a654c3d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 59,
+        "status": 0,
+        "pixels": "0ebb0edfd7823454710029822d6ff8a1140a53381bf021752f20ee9bf76a2a33",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 59,
+        "status": 0,
+        "pixels": "c42efea51aa8a7c404e6b5af7a41c52ba20bc115db9bdf227eec222f2d1f7fe2",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "quad",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "5cc8ce0c23a16715d7613a6e2f9b5d2f72acce9ea552606d0948a350385ad4f1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "1457272bf766c4f8b0f7be4365852077264cdcb9da94cca008df07cc9cef829a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "ca4e75810ca65852442648e44a967117418f70a4e202076c629be14736f00269",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "f2536fa30e3a6aad8ce33d25f0ae5317e507dd0f2210ab7d3823bfe8c1852f1a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "c97ad78ddae127631cb7d4d1b556a2edd31004aae2c742c1caeeddef9086c316",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "4810ae7b03c3c69206d9a843e8b50b1e24270b84eda844118b72dfc734118667",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 59,
+        "status": 0,
+        "pixels": "34ddc403600d7a51a4723a6e42e7330e6a9dccc9e46983a3aaae54951190a071",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 59,
+        "status": 0,
+        "pixels": "95cf425e07810fad5ea3ba572af3804a8984224e7f4bac8520f6c05b7fdd0a5a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 59,
+        "status": 0,
+        "pixels": "9bfe013e75a6177e31ae63e2f3e9a3edd865c55507bcb944046678e8039ebc15",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "sextant",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "38a7b1317120e26ee66bf7806aa14b5da3c18fab02dd421fb0ccfc94a07a4ed2",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "2333775aadd5a233f4e6a5db6f971f7dea9e56dd773c43d7bf6073aa1eb43b22",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "4d5a0ec159b56f73c1ca8ecb4f4e0cfcd10daa842d3c81e8848a34e3f7989bb5",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "6aaf72370145362b7f5720d7acdf57d5f213f42473dd0c70d28934c2cd82ecd1",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "a8f9ea1ea89a9e47f61a5a6af450319a3dbaca49f7944d2306eeb03dcbaf5922",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "9b54e5b162d85fc8cd41a8ec13e85f9db4b8d525a72fca07823e4ef4cb399720",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 59,
+        "status": 0,
+        "pixels": "ffa004d83fbbbfff02b96a59d09f6f00dc1cb5c41b769f63b93b68acf81f986b",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 59,
+        "status": 0,
+        "pixels": "14b295b7b75f035112ebb1310cd6be5319da4bdf646c71b446e159bd7641ccf9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 59,
+        "status": 0,
+        "pixels": "f8d1ea3e9e22a426dbb61168f08b48899a880c37cd0029a4052352dcc533ceeb",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "shape": "ascii",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "f9e8bc7c121b8c2b5c94dda76637a8518c2693a76d54a14249f1577e53e27e0a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "4a7879460a0bf57a495a0a6e560c20e112e8145309d80cb9ad77eea49298ee47",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "fa252753d914e2defbecfd7fceecc447a661384591f6416141cb8d7ad74461e4",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "aa15eaafa7d1fadb3f748631c06b405bf5a89c9910dea0ef4fd5a5bb60f94376",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "5b9fc52f7ad61025aba289d213bd02a5d2aa240b4a44172ccf19a68df5600e89",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "e3f95b659d30734f734702ac48c35e865c22ee815553a683e442e45240fffaed",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 59,
+        "status": 0,
+        "pixels": "629ca4f3537b0eea1fe45063af91c83b37ca8093e2b8cd481d5b9e8597fc0f9e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 59,
+        "status": 0,
+        "pixels": "953534135ccee1fcc7d8b788f0139bc20312bdb7815de89ce9d7c7a0b687f1e8",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 59,
+        "status": 0,
+        "pixels": "b6d61ba22451f4d36149789496b35f72ee4d91fffec1b49eca5091e304ae356e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000059",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "half",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "2c7ab99ec2b903cd5a69093c7cfe71401c5d416f3bee5d68f86fc1b6bc5a2a65",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "6be16ae4def8ed5b81eda9accb8db3694c8d656b1041365a8f9d2f61e3ed8db6",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "bed11219cc3bde9cebd03fad655dc10361a129fdd09e7109717dc5922c3ce7cc",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "4e0d095e4f85f4852da37a071f694afaa264185e9df14be29030d2099ba71211",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "3c01c62357ab6d2dbab6731169ee379407f2415c6e35414871e23cace4992027",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "98d95ade900c2b8b1cbd4ac8a779efe87a1a9786da22515c940721f59ea20d02",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 63,
+        "status": 0,
+        "pixels": "347e3964f68016ec8a71135408e16f4d93aff60f527a6af515c1a9fdb956b6a5",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 63,
+        "status": 0,
+        "pixels": "c27dd0f82c3e8988794910b1242b3f603cff8360d12c13b2ff6074730994d814",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 63,
+        "status": 0,
+        "pixels": "1342a13fda699bec7e1951a080e1d5893ca90793f08dbf72c1abe83d4e07be8f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "quad",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "f93e521236ca1e791d30975fa984a1c835319af8ebf1fbd25ccf20655ac823b9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "b130a707f4d6700cf8143a63fa804c3ae1aae205e4f7600b494c109809a5b87e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "675e93a30a20f174b785675d4d4cce59e4a22c5df9f7fd46ca869f8b0ca7cd19",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "67a81fdd2d5b58e3b8cd17202161fcbdd00f8167596cea7111dae02c0dae8999",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "fe5123fa6fee3d4efacc0f3842c944a118987f905d14a7672bc6d2f3c0e9c914",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "8cb37baf34fbe15179ed306efe3857f8bb770bf1f48e36a26def8f2b4cc28fac",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 63,
+        "status": 0,
+        "pixels": "429a410e0caa3fca5ed81a03552fa1ef0efcbcd2eb48aa76be44728019578dae",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 63,
+        "status": 0,
+        "pixels": "915dc48173bd81ab24812346949846b234110fe437ff619e99889f9526894cc8",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 63,
+        "status": 0,
+        "pixels": "fd3ecf18af30bb0ed576b47a55bb3338da994a40bda58985945ea1b0233b1ea0",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "sextant",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "8a70f9a44153135fc402a15054d60d8e71b7c5b6cf3559e1df321b362f320247",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "56420934f51e61abcc4b954c31c32d9fbf1a9510126165c3f2e22f56cd27984e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "6d112f88ad10a7aa920aef6032f3b8b732dedf33167d363ed1b94e2d8220a256",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "32d055e41b95d1ab74a6153b2d1f44fd645ca71c77c11ffe4b7990f2115e9dcb",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "0c09edf39d5abaf103d957215042020950366883141675799f6b34dd3a2ce72a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "ceb605368e2c0361d977cc0ede53c8ae79e4e05664718933df31276d81c89005",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 63,
+        "status": 0,
+        "pixels": "23e3bd55db413412f275993773ecfddbf6713c740b6aa93e8dbf6636368ae7b9",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 63,
+        "status": 0,
+        "pixels": "76f055463006b3b496a7e53f64e7a0bd0afeaca0c54de6312eb322547372a910",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 63,
+        "status": 0,
+        "pixels": "25e503928f8754a323cb18104a13e50dea51f3e165702b2df6ed9d613b815e67",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  },
+  {
+    "seed": 42,
+    "shape": "ascii",
+    "frames": [
+      {
+        "tick": 0,
+        "score": 0,
+        "status": 0,
+        "pixels": "31814e6bd0b56cb065efbcafc279fc09de1414ed91cc6f31c8666d2b9e387e5d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 1,
+        "score": 0,
+        "status": 0,
+        "pixels": "7d99bc4c7f21247e8344467d81b8dcba428d8a7db2ad264cc5bc1ab41332d68f",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 7,
+        "score": 0,
+        "status": 0,
+        "pixels": "4a5af6555c57f771d37cb3495982147a1b95a2c11e437f8be65fe14ad68b767a",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000000",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 13,
+        "score": 34,
+        "status": 0,
+        "pixels": "49b567633f76ce0a95445367e7b834255217b9bddf97733fc6f6fef5d1b83a0d",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 31,
+        "score": 34,
+        "status": 0,
+        "pixels": "f44186f9119295b2cdba1f6c0ab32d17f03d1493e9504ca0141906541301c387",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000034",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 61,
+        "score": 41,
+        "status": 0,
+        "pixels": "86fdb01e1f23d7398fb69215141e8b67acc30974b8a67db92f2072776fe72568",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000041",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 91,
+        "score": 63,
+        "status": 0,
+        "pixels": "31b16de16afd87143d2f23908ea44261615ae8e3d35848235145bfdf3a34187e",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 151,
+        "score": 63,
+        "status": 0,
+        "pixels": "1d2a32ccab8993cc4de396ea2fa54f035c2149d3cb8d6831ae17c9296f8d10f4",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      },
+      {
+        "tick": 240,
+        "score": 63,
+        "status": 0,
+        "pixels": "cc2dbde7074fb2eea0929918a98845ba6a41f927da01f99cd4d224b7fb4d8965",
+        "hud": {
+          "Fields": [
+            {
+              "Label": "SCORE",
+              "Value": "000063",
+              "Accent": true
+            },
+            {
+              "Label": "LEVEL",
+              "Value": "1",
+              "Accent": false
+            },
+            {
+              "Label": "LINES",
+              "Value": "0",
+              "Accent": false
+            }
+          ],
+          "Hint": "←/→ move · ↑ rotate · ↓ soft · space drop"
+        }
+      }
+    ]
+  }
+]

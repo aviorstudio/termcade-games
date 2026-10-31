@@ -1,0 +1,17 @@
+[package]
+name = "termcade-brickough"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[dependencies]
+termcade-sdk.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+sha2.workspace = true

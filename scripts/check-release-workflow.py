@@ -55,11 +55,11 @@ def check(path: Path) -> list[str]:
     # Check the operations themselves: display labels and YAML quoting are
     # presentation, not the release security contract.
     ordered_steps = [
-        'go run github.com/aviorstudio/termcade@v0.0.5 dev build "$GAME"',
+        'bash scripts/build.sh "$GAME"',
         attestation_use,
         'gh attestation verify "$GAME/build/$GAME.tcade"',
         'gh release create "$TAG"',
-        "go run github.com/aviorstudio/termcade@v0.0.13 publish",
+        ".artifacts/termcade-tool/termcade publish",
     ]
     positions = [text.find(step) for step in ordered_steps]
     if (any(text.count(step) != 1 for step in ordered_steps)
@@ -67,6 +67,7 @@ def check(path: Path) -> list[str]:
         failures.append("release steps must remain build, attest, verify, release, publish")
 
     required_fragments = [
+        '            THIRD_PARTY_NOTICES.txt \\',
         'sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"',
         '"$GAME/build/$GAME.tcade.sha256" \\',
         '--signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yml"',
@@ -78,7 +79,7 @@ def check(path: Path) -> list[str]:
         'if [ -z "${TERMCADE_TOKEN:-}" ]; then',
         "exit 1",
         "TERMCADE_TOKEN: ${{ secrets.TERMCADE_API_KEY }}",
-        "go run github.com/aviorstudio/termcade@v0.0.13 publish",
+        ".artifacts/termcade-tool/termcade publish",
     ]
     for fragment in required_fragments:
         if fragment not in text:

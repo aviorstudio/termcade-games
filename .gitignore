@@ -7,3 +7,5 @@
 .artifacts/
 __pycache__/
 /.ci-tools/
+
+/target/

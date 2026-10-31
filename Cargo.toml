@@ -1,0 +1,14 @@
+[workspace]
+members = ["asteroid", "tetris", "brickough", "internal/random"]
+resolver = "3"
+
+[workspace.dependencies]
+termcade-sdk = { git = "https://github.com/aviorstudio/termcade", rev = "4ecfbb104c5f470d8602ef9df7b05297e6a832fa" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[profile.release]
+panic = "abort"
+lto = "thin"
+strip = true
