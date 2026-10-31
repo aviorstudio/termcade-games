@@ -34,9 +34,9 @@ jobs:
           API = "https://api.termca.de"
           REPO = "https://github.com/aviorstudio/termcade-games"
           REQUIRED = (
-              ("aviorstudio/asteroid", "asteroid-v0.0.3", "asteroid.tcade", "3275f6d20a5c1e59c454bc6d0b96867bb5374e179700fad6b69e498286de3b3e"),
-              ("aviorstudio/tetris", "tetris-v0.0.2", "tetris.tcade", "e86d121fddb30a5144f64860734142ad003363f10ed61e062ebc32755ae44545"),
-              ("aviorstudio/brickough", "brickough-v0.0.2", "brickough.tcade", "3b3acf64dd0eb4567c921669bac4717de1423e5f71fbc51749b8a55f96ad96b5"),
+              ("aviorstudio/asteroid", "asteroid-v0.1.0", "asteroid.tcade", "7fbafb0f2b2b3100c41dfb225d26ee512ada85a57c3518ea957864d7aaad69bb"),
+              ("aviorstudio/tetris", "tetris-v0.1.0", "tetris.tcade", "33eb430858972d7336013a8848ad42fc9748d67089d234fcf579f7dcf72c1384"),
+              ("aviorstudio/brickough", "brickough-v0.1.0", "brickough.tcade", "7289719ea5a66e607188b5623ac61bae492f8a2f90a559abcfa83083b6cf148c"),
           )
 
           token = os.environ.get("TERMCADE_API_KEY", "")
