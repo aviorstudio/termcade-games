@@ -1,20 +1,24 @@
 [tools]
 "python" = "3.13.11"
-"go" = "1.27.3"
-"go:golang.org/x/vuln/cmd/govulncheck" = "1.7.0"
+"rust" = "1.94.0"
+"node" = "26.7.0"
+"cargo:cargo-audit" = "0.22.2"
 "actionlint" = "1.7.12"
 "shellcheck" = "0.11.0"
 
 [env]
 TOOLS_ROOT = "{{ get_env(name='TOOLS_ROOT', default=config_root ~ '/.ci-tools') }}"
-GOTOOLCHAIN = "local"
+RUSTUP_TOOLCHAIN = "1.94.0"
+CARGO_TARGET_DIR = "{{ get_env(name='CARGO_TARGET_DIR', default=config_root ~ '/.artifacts/rust-target') }}"
+CARGO_BUILD_JOBS = "2"
+CARGO_INCREMENTAL = "0"
 PYTHONDONTWRITEBYTECODE = "1"
 
 [tasks."install"]
-run = ["env GOWORK=off go mod download"]
+run = ["rustup component add --toolchain 1.94.0 rustfmt clippy", "rustup target add --toolchain 1.94.0 wasm32-wasip1", "cargo fetch --locked", "python3 scripts/install-termcade.py"]
 
 [tasks."lint"]
-run = ["env GOWORK=off go vet ./...", "python3 scripts/check-release-workflow.py .github/workflows/release.yml", "actionlint", "shellcheck scripts/build.sh"]
+run = ["cargo fmt --all --check", "cargo clippy --workspace --all-targets --locked -- -D warnings", "python3 scripts/check-release-workflow.py .github/workflows/release.yml", "actionlint", "shellcheck scripts/build.sh scripts/test.sh"]
 
 [tasks."unit"]
 run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" test --name unit --artifact asteroid/build --artifact brickough/build --artifact tetris/build -- mise run _unit"
@@ -25,7 +29,7 @@ run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" build --name build --arti
 depends = ["install"]
 
 [tasks."vuln"]
-run = ["govulncheck ./..."]
+run = ["cargo audit --deny warnings --file Cargo.lock --db .artifacts/advisory-db"]
 
 [tasks."clean"]
 run = ["python3 -c 'import shutil; [shutil.rmtree(p,ignore_errors=True) for p in ['\"'\"'asteroid/build'\"'\"', '\"'\"'brickough/build'\"'\"', '\"'\"'tetris/build'\"'\"', '\"'\"'.artifacts'\"'\"']]'"]
@@ -35,7 +39,7 @@ run = ["bash scripts/build.sh"]
 hide = true
 
 [tasks."_unit"]
-run = ["env GOWORK=off go test ./...", "python3 scripts/test-recover-catalog.py"]
+run = ["bash scripts/test.sh"]
 hide = true
 
 [tasks."_test-stages"]
