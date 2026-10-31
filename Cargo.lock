@@ -159,7 +159,7 @@ dependencies = [
 
 [[package]]
 name = "termcade-asteroid"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde_json",
  "sha2",
@@ -169,7 +169,7 @@ dependencies = [
 
 [[package]]
 name = "termcade-brickough"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde_json",
  "sha2",
@@ -185,8 +185,8 @@ dependencies = [
 
 [[package]]
 name = "termcade-sdk"
-version = "0.1.0"
-source = "git+https://github.com/aviorstudio/termcade?rev=4ecfbb104c5f470d8602ef9df7b05297e6a832fa#4ecfbb104c5f470d8602ef9df7b05297e6a832fa"
+version = "0.1.1"
+source = "git+https://github.com/aviorstudio/termcade?rev=c1885e18633072ad8e212ea8e3a4ba4240c0c2cf#c1885e18633072ad8e212ea8e3a4ba4240c0c2cf"
 dependencies = [
  "serde",
  "serde_json",
@@ -194,7 +194,7 @@ dependencies = [
 
 [[package]]
 name = "termcade-tetris"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde_json",
  "sha2",
