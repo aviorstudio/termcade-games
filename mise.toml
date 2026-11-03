@@ -31,8 +31,12 @@ depends = ["install"]
 [tasks."vuln"]
 run = ["cargo audit --deny warnings --file Cargo.lock --db .artifacts/advisory-db"]
 
+[tasks."artifact-check"]
+run = "python3 scripts/check-artifacts.py"
+depends = ["build"]
+
 [tasks."clean"]
-run = ["python3 -c 'import shutil; [shutil.rmtree(p,ignore_errors=True) for p in ['\"'\"'asteroid/build'\"'\"', '\"'\"'brickough/build'\"'\"', '\"'\"'tetris/build'\"'\"', '\"'\"'.artifacts'\"'\"']]'"]
+run = "python3 \"$TOOLS_ROOT/helpers/clean.py\" --path dist --path target --path .artifacts/build --path .artifacts/rust-target --path .artifacts/advisory-db --path asteroid/build --path brickough/build --path tetris/build"
 
 [tasks."_build"]
 run = ["bash scripts/build.sh"]
@@ -50,7 +54,7 @@ hide = true
 run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" session --test unit -- mise run _test-stages"
 
 [tasks."_check-stages"]
-run = [{"task" = "install"}, {"task" = "lint"}, {"task" = "unit"}, {"task" = "build"}, {"task" = "vuln"}]
+run = [{"task" = "install"}, {"task" = "lint"}, {"task" = "unit"}, {"task" = "build"}, {"task" = "artifact-check"}, {"task" = "vuln"}]
 hide = true
 
 [tasks."check"]

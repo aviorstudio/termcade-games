@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: nicodes/tools/setup@f412061a7a3f0914db9e09d1159e69504aee8706
+        uses: nicodes/tools/setup@a1c0321f3b4917a7e99eca42e241e46670f6e1e1
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
@@ -111,6 +111,7 @@ jobs:
         run: |
           set -euo pipefail
           bash scripts/build.sh "$GAME"
+          python3 scripts/check-artifacts.py "$GAME"
           sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
 
       # Sign the package produced above, before either release publication or
