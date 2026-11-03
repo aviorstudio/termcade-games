@@ -21,11 +21,11 @@ run = ["rustup component add --toolchain 1.94.0 rustfmt clippy", "rustup target 
 run = ["cargo fmt --all --check", "cargo clippy --workspace --all-targets --locked -- -D warnings", "python3 scripts/check-release-workflow.py .github/workflows/release.yml", "actionlint", "shellcheck scripts/build.sh scripts/test.sh"]
 
 [tasks."unit"]
-run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" test --name unit --artifact asteroid/build --artifact brickough/build --artifact tetris/build -- mise run _unit"
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" test --name unit --artifact crates/asteroid/build --artifact crates/brickough/build --artifact crates/tetris/build -- mise run _unit"
 depends = ["install"]
 
 [tasks."build"]
-run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" build --name build --artifact asteroid/build --artifact brickough/build --artifact tetris/build -- mise run _build"
+run = "python3 \"$TOOLS_ROOT/helpers/verification.py\" build --name build --artifact crates/asteroid/build --artifact crates/brickough/build --artifact crates/tetris/build -- mise run _build"
 depends = ["install"]
 
 [tasks."vuln"]
@@ -36,7 +36,7 @@ run = "python3 scripts/check-artifacts.py"
 depends = ["build"]
 
 [tasks."clean"]
-run = "python3 \"$TOOLS_ROOT/helpers/clean.py\" --path dist --path target --path .artifacts/build --path .artifacts/rust-target --path .artifacts/advisory-db --path asteroid/build --path brickough/build --path tetris/build"
+run = "python3 \"$TOOLS_ROOT/helpers/clean.py\" --path dist --path target --path .artifacts/build --path .artifacts/rust-target --path .artifacts/advisory-db --path crates/asteroid/build --path crates/brickough/build --path crates/tetris/build"
 
 [tasks."_build"]
 run = ["bash scripts/build.sh"]

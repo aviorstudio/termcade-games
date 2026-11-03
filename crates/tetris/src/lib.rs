@@ -435,7 +435,7 @@ sdk::termcade_game!(Tetris::new);
 #[cfg(test)]
 mod trace_tests {
     use super::*;
-    include!("../../internal/trace.rs");
+    include!("../../../internal/trace.rs");
     #[test]
     fn original_game_replays_match_all_four_densities() {
         replay(include_str!("../tests/fixtures/go-trace-v1.json"), |seed| {
