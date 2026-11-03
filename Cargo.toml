@@ -1,5 +1,5 @@
 [workspace]
-members = ["asteroid", "tetris", "brickough", "internal/random"]
+members = ["crates/asteroid", "crates/tetris", "crates/brickough", "crates/random"]
 resolver = "3"
 
 [workspace.dependencies]

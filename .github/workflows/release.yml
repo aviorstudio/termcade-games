@@ -75,7 +75,7 @@ jobs:
             exit 1
           fi
 
-          manifest="$GAME/termcade.toml"
+          manifest="crates/$GAME/termcade.toml"
           [ -f "$manifest" ] || { echo "no $manifest" >&2; exit 1; }
 
           # The one line that matters. Tolerates the spacing the manifests use.
@@ -112,7 +112,7 @@ jobs:
           set -euo pipefail
           bash scripts/build.sh "$GAME"
           python3 scripts/check-artifacts.py "$GAME"
-          sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"
+          sha256sum "crates/$GAME/build/$GAME.tcade" | tee "crates/$GAME/build/$GAME.tcade.sha256"
 
       # Sign the package produced above, before either release publication or
       # marketplace publication. A failure here stops the release rather than
@@ -120,7 +120,7 @@ jobs:
       - name: "Attest build provenance"
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-path: ${{ inputs.game }}/build/${{ inputs.game }}.tcade
+          subject-path: crates/${{ inputs.game }}/build/${{ inputs.game }}.tcade
 
       - name: Verify package provenance policy
         env:
@@ -128,7 +128,7 @@ jobs:
           GAME: ${{ inputs.game }}
         run: |
           set -euo pipefail
-          gh attestation verify "$GAME/build/$GAME.tcade" \
+          gh attestation verify "crates/$GAME/build/$GAME.tcade" \
             --repo "$GITHUB_REPOSITORY" \
             --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yml" \
             --source-ref refs/heads/main \
@@ -145,7 +145,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          sha="$(cut -d' ' -f1 < "$GAME/build/$GAME.tcade.sha256")"
+          sha="$(cut -d' ' -f1 < "crates/$GAME/build/$GAME.tcade.sha256")"
           cat > notes.md <<NOTES
           $GAME $VERSION
 
@@ -177,8 +177,8 @@ jobs:
           NOTES
 
           gh release create "$TAG" \
-            "$GAME/build/$GAME.tcade" \
-            "$GAME/build/$GAME.tcade.sha256" \
+            "crates/$GAME/build/$GAME.tcade" \
+            "crates/$GAME/build/$GAME.tcade.sha256" \
             THIRD_PARTY_NOTICES.txt \
             --target "$GITHUB_SHA" --title "$GAME $VERSION" --notes-file notes.md
 

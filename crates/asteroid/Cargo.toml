@@ -11,7 +11,7 @@ path = "src/lib.rs"
 
 [dependencies]
 termcade-sdk.workspace = true
-termcade-game-random = { path = "../internal/random" }
+termcade-game-random = { path = "../random" }
 
 [dev-dependencies]
 serde_json.workspace = true

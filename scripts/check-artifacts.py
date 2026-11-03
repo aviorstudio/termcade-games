@@ -39,9 +39,9 @@ def main():
     root = Path(__file__).resolve().parents[1]
     target = Path(os.environ.get('CARGO_TARGET_DIR', str(root/'.artifacts/rust-target')))
     for game in games:
-        archive = root/game/'build'/f'{game}.tcade'
+        archive = root/'crates'/game/'build'/f'{game}.tcade'
         module = target/'wasm32-wasip1/release'/f'termcade_{game}.wasm'
-        digest = verify(archive, root/game/'termcade.toml', module)
+        digest = verify(archive, root/'crates'/game/'termcade.toml', module)
         print(game, digest, 'manifest and compiled module verified')
 
 

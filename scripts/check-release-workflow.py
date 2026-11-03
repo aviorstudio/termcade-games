@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ACTION_SHA = "4d101475d8b20a2381f78447822ac1eab6504dd8"
-SUBJECT = "${{ inputs.game }}/build/${{ inputs.game }}.tcade"
+SUBJECT = "crates/${{ inputs.game }}/build/${{ inputs.game }}.tcade"
 
 
 def check(path: Path) -> list[str]:
@@ -57,7 +57,7 @@ def check(path: Path) -> list[str]:
     ordered_steps = [
         'bash scripts/build.sh "$GAME"',
         attestation_use,
-        'gh attestation verify "$GAME/build/$GAME.tcade"',
+        'gh attestation verify "crates/$GAME/build/$GAME.tcade"',
         'gh release create "$TAG"',
         ".artifacts/termcade-tool/termcade publish",
     ]
@@ -68,8 +68,8 @@ def check(path: Path) -> list[str]:
 
     required_fragments = [
         '            THIRD_PARTY_NOTICES.txt \\',
-        'sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"',
-        '"$GAME/build/$GAME.tcade.sha256" \\',
+        'sha256sum "crates/$GAME/build/$GAME.tcade" | tee "crates/$GAME/build/$GAME.tcade.sha256"',
+        '"crates/$GAME/build/$GAME.tcade.sha256" \\',
         '--signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yml"',
         "--source-ref refs/heads/main",
         '--source-digest "$GITHUB_SHA"',
