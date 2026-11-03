@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ACTION_SHA = "4d101475d8b20a2381f78447822ac1eab6504dd8"
-SUBJECT = "${{ inputs.game }}/build/${{ inputs.game }}.tcade"
+SUBJECT = "crates/${{ inputs.game }}/build/${{ inputs.game }}.tcade"
 
 
 def check(path: Path) -> list[str]:
@@ -57,7 +57,7 @@ def check(path: Path) -> list[str]:
     ordered_steps = [
         'bash scripts/build.sh "$GAME"',
         attestation_use,
-        'gh attestation verify "$GAME/build/$GAME.tcade"',
+        'gh attestation verify "crates/$GAME/build/$GAME.tcade"',
         'gh release create "$TAG"',
         ".artifacts/termcade-tool/termcade publish",
     ]
