@@ -68,8 +68,8 @@ def check(path: Path) -> list[str]:
 
     required_fragments = [
         '            THIRD_PARTY_NOTICES.txt \\',
-        'sha256sum "$GAME/build/$GAME.tcade" | tee "$GAME/build/$GAME.tcade.sha256"',
-        '"$GAME/build/$GAME.tcade.sha256" \\',
+        'sha256sum "crates/$GAME/build/$GAME.tcade" | tee "crates/$GAME/build/$GAME.tcade.sha256"',
+        '"crates/$GAME/build/$GAME.tcade.sha256" \\',
         '--signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yml"',
         "--source-ref refs/heads/main",
         '--source-digest "$GITHUB_SHA"',
