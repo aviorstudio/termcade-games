@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 8987d62c87785ddbbd986d1d0dc7f2282edb741e51048ccebecd199b4fe8a431 -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: d5b4ff5a692e83a686293c29488c141bc448ef923ac1a8009134475e84da7d0e -->
 
 # termcade games
 
@@ -28,3 +28,7 @@ mise run check
 ```
 
 Native build and test commands retain source and output checks, with receipts in `.artifacts/verification`. Existing product release rules and artifacts remain owned by this repository. End users install the product’s published distribution.
+
+## Contributor task interface
+
+Contributor tool versions and task entry points live in the native Mise configuration. Use `mise run lint` for source checks, `mise run test` for the applicable behavioral tests, and `mise run check` for the complete supported gate. `mise run clean` removes declared generated outputs while preserving source, credentials and retained data. This package has no application development service.
