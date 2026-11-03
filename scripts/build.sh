@@ -8,12 +8,12 @@ if [ "$#" -eq 1 ]; then
   case "$1" in asteroid|brickough|tetris) games=("$1") ;; *) echo 'Unknown game' >&2; exit 2 ;; esac
 fi
 for game in "${games[@]}"; do
-  "$cli" dev build "$game"
+  "$cli" dev build "crates/$game"
 done
 python3 - "${games[@]}" <<'PY'
 import hashlib,sys
 from pathlib import Path
 for game in sys.argv[1:]:
-    path=Path(game)/'build'/f'{game}.tcade'
+    path=Path('crates')/game/'build'/f'{game}.tcade'
     print(hashlib.sha256(path.read_bytes()).hexdigest(),path)
 PY
