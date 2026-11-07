@@ -1,5 +1,6 @@
 """Install the reviewed Rust authoring CLI after checking hosted provenance."""
 import json
+import tomllib
 import os
 from pathlib import Path
 import platform
@@ -9,7 +10,7 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCK = json.loads((ROOT / '.github/termcade-cli.json').read_text())
+LOCK = tomllib.loads((ROOT / '.github/termcade-cli.toml').read_text())
 SYSTEM = platform.system()
 ARCH = {'AMD64':'x86_64','aarch64':'arm64','arm64':'arm64','x86_64':'x86_64'}.get(platform.machine())
 assert (SYSTEM,ARCH) in {('Linux','x86_64'),('Linux','arm64'),('Darwin','x86_64'),('Darwin','arm64'),('Windows','x86_64')}, 'unsupported authoring host'
