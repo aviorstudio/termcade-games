@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 5076835116dff7d60606a1560c1dec174019e8066f9c0048279639b2def21ff4 -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: debb9784af1caccb4debfd08756d51a71a27de8cc5f70d140fb1002e307fb198 -->
 
 # termcade games
 
@@ -15,6 +15,8 @@ Each game is implemented in Rust and exports Termcade’s WebAssembly ABI throug
 The Cargo workspace locks the SDK to an exact Git revision. Rust 1.94 builds `wasm32-wasip1` reactors. Native tests cover gameplay rules and seeded replays; WebAssembly checks exercise the exported ABI at all four rendering densities.
 
 Game releases retain independent `<game>-vX.Y.Z` tags. Published versions are immutable. The release workflow builds with a pinned Rust Termcade CLI, verifies hosted build provenance, publishes the package, then indexes it in the marketplace. `THIRD_PARTY_NOTICES.txt` accompanies release assets.
+
+The contributor installer reads its reviewed CLI source and security pins from `.github/termcade-cli.toml`; downloaded build-info and release protocols remain JSON.
 
 ## Contributor verification
 
