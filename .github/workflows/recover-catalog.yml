@@ -1,4 +1,4 @@
-name: "Catalog Recovery"
+name: Recover catalog
 
 # Re-index the three existing first-party releases after loss of registry data.
 # This creates no GitHub release and touches no database directly: the scoped

@@ -1,4 +1,4 @@
-name: "Release"
+name: Release
 
 # Cut one game's release: build its .tcade, tag it, and publish a GitHub
 # release with the package attached.

@@ -1,4 +1,4 @@
-name: Build & Test
+name: Build and test
 'on':
   pull_request:
     types:
@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - name: Set up locked komizo
+    - name: Set up development tools
       uses: nicodes/tools/setup@a1c0321f3b4917a7e99eca42e241e46670f6e1e1
       env:
         GH_TOKEN: ${{ github.token }}
