@@ -1,4 +1,4 @@
-name: "Release"
+name: Release
 
 # Cut one game's release: build its .tcade, tag it, and publish a GitHub
 # release with the package attached.
@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: nicodes/tools/setup@a1c0321f3b4917a7e99eca42e241e46670f6e1e1
+        uses: nicodes/tools/setup@71540eb673ebd47162de3b78bb6ffbf77605d2ab
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
