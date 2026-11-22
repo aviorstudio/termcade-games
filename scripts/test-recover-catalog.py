@@ -10,7 +10,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
-WORKFLOW = Path('.github/workflows/recover-catalog.yml').read_text()
+WORKFLOW = Path('.github/workflows/recovery.yml').read_text()
 SCRIPT = textwrap.dedent(WORKFLOW.split("          python3 - <<'PY'\n", 1)[1].rsplit('          PY', 1)[0])
 KEY = 'ak_' + 'synthetic' * 8
 
