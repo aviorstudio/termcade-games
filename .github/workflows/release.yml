@@ -66,7 +66,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Set up tools"
-        uses: nicodes/tools/setup@71540eb673ebd47162de3b78bb6ffbf77605d2ab
+        uses: nicodes/tools/setup@2e28c8dacc76b1c7b0044e6dffadf261e232bc1d
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Install pinned build and validation tools
