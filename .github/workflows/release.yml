@@ -18,8 +18,16 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: Publish a new version or republish the existing first-party catalog
+        required: true
+        type: choice
+        default: publish
+        options:
+          - publish
+          - republish
       game:
-        description: Which game to release
+        description: Which game to release (publish mode)
         required: true
         type: choice
         options:
@@ -33,11 +41,14 @@ permissions: {}
 env:
   RUSTUP_TOOLCHAIN: 1.94.0
 
-concurrency: release-${{ inputs.game }}
+concurrency:
+  group: ${{ inputs.mode == 'republish' && 'recover-first-party-catalog' || format('release-{0}', inputs.game) }}
+  cancel-in-progress: false
 
 jobs:
   release:
     name: "Release"
+    if: inputs.mode == 'publish'
     runs-on: ubuntu-24.04
     env:
       MISE_GITHUB_TOKEN: ${{ github.token }}
@@ -212,3 +223,81 @@ jobs:
           fi
           .artifacts/termcade-tool/termcade publish \
             "https://github.com/$GITHUB_REPOSITORY" "$TAG" "$GAME.tcade"
+
+  republish:
+    name: Republish existing catalog
+    if: inputs.mode == 'republish' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions: {}
+    steps:
+      - name: Publish existing releases to the marketplace
+        env:
+          TERMCADE_API_KEY: ${{ secrets.TERMCADE_API_KEY }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import urllib.error
+          import urllib.request
+
+          API = "https://api.termca.de"
+          REPO = "https://github.com/aviorstudio/termcade-games"
+          REQUIRED = (
+              ("aviorstudio/asteroid", "asteroid-v0.1.1", "asteroid.tcade", "3e6191d1d8069e12323fc12d96edea8e96695a49cc64f291d4dfb598f666f25f"),
+              ("aviorstudio/tetris", "tetris-v0.1.1", "tetris.tcade", "7b516fc1a6239b1ae0102a7824d7d32e8e42cccbe99147bae2b0ab03b7fb8eb4"),
+              ("aviorstudio/brickough", "brickough-v0.1.1", "brickough.tcade", "51f8c6d6a1059a2b2c9397887fb0a836dc849928318ee04de7d4fdf1270f27d1"),
+          )
+
+          token = os.environ.get("TERMCADE_API_KEY", "")
+          if not re.fullmatch(r"ak_[A-Za-z0-9_-]{17,509}", token):
+              raise SystemExit("TERMCADE_API_KEY must be a Clerk publishing key")
+
+          def request(method, path, body=None, authenticated=False):
+              data = None if body is None else json.dumps(body).encode()
+              headers = {"Content-Type": "application/json"} if data else {}
+              if authenticated:
+                  headers["Authorization"] = "Bearer " + token
+              req = urllib.request.Request(API + path, data=data, headers=headers, method=method)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      return response.status, json.load(response)
+              except urllib.error.HTTPError as error:
+                  return error.code, None
+
+          def exact(entry, game_id, tag, asset, digest):
+              return entry is not None and all((
+                  entry.get("id") == game_id,
+                  entry.get("version") == tag.rsplit("-v", 1)[1],
+                  entry.get("repo") == REPO,
+                  entry.get("tag") == tag,
+                  entry.get("asset") == asset,
+                  entry.get("sha256") == digest,
+                  entry.get("abi") == 1,
+              ))
+
+          for game_id, tag, asset, digest in REQUIRED:
+              path = f"/v1/games/{game_id}/resolve?abi=1"
+              status, current = request("GET", path)
+              if status == 200:
+                  if not exact(current, game_id, tag, asset, digest):
+                      raise SystemExit(f"{game_id} exists but does not match the reviewed release")
+                  print(f"{game_id} already restored; verifying publishing access")
+              elif status != 404:
+                  raise SystemExit(f"could not inspect {game_id}: HTTP {status}")
+
+              status, _ = request("POST", "/v1/publish", {
+                  "repo": REPO,
+                  "tag": tag,
+                  "asset": asset,
+                  "expected_sha256": digest,
+              }, authenticated=True)
+              if status not in (201, 409):
+                  raise SystemExit(f"recovery did not restore {game_id} exactly (HTTP {status})")
+              status, published = request("GET", path)
+              if status != 200 or not exact(published, game_id, tag, asset, digest):
+                  raise SystemExit(f"recovery did not verify {game_id} exactly (HTTP {status})")
+              print(f"restored {game_id} with its reviewed digest")
+          PY
